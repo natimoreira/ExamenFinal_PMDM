@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
+            // aquí iría lo del reset pero no se hacerlo
             R.id.resetId -> true
             else -> super.onOptionsItemSelected(item)
         }

@@ -7,8 +7,7 @@ class SpinnerProvider {
             " ",
             "Rock",
             "Blues",
-            "Jazz",
-            "Varios"
+            "Jazz"
         )
     }
 }

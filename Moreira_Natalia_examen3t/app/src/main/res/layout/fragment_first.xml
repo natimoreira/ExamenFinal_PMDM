@@ -11,7 +11,7 @@
         android:id="@+id/txtTexto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="136dp"
         android:text="BiblioMúsica"
         android:textColor="@color/white"
         android:textSize="40dp"
@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGenero"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintVertical_bias="0.251" />
 
     <TextView
         android:id="@+id/txtGenero"

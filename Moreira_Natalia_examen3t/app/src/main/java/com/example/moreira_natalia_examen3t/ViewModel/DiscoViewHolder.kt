@@ -2,6 +2,7 @@ package com.example.moreira_natalia_examen3t.ViewModel
 
 import android.app.AlertDialog
 import android.view.View
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moreira_natalia_examen3t.Model.DiscoModel
 import com.example.moreira_natalia_examen3t.R
@@ -16,5 +17,9 @@ class DiscoViewHolder (view: View): RecyclerView.ViewHolder(view) {
         binding.imgCaratula.setImageResource(modelo.foto ?: R.drawable.ic_launcher_background)
         binding.textAlbum.text = modelo.titulo
         binding.textArtista.text = modelo.artista
+
+        binding.cardView.setOnClickListener{
+            it.findNavController().navigate(R.id.action_SecondFragment_to_infoFragment)
+        }
     }
 }

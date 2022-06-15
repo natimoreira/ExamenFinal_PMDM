@@ -4,43 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/rosa"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".View.InfoFragment">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textoTitulo"
-        android:layout_width="388dp"
-        android:layout_height="69dp"
+        android:id="@+id/txtInfoTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:gravity="center|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgAlbum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imgInfoAlbum"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfoTitulo"
         tools:src="@tools:sample/avatars" />
 
     <ScrollView
-        android:id="@+id/descId"
-        android:layout_width="376dp"
-        android:layout_height="379dp"
+        android:id="@+id/descInfo"
+        android:layout_width="381dp"
+        android:layout_height="267dp"
+        android:layout_gravity="center"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAlbum">
+        app:layout_constraintTop_toBottomOf="@+id/imgInfoAlbum">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/txtDesc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content" />
+
     </ScrollView>
 
     <Button
@@ -49,10 +52,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="ELIMINAR"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descId"
+        app:layout_constraintTop_toBottomOf="@+id/descInfo"
         app:layout_constraintVertical_bias="0.0" />
 
 

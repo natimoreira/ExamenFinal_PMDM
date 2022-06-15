@@ -4,20 +4,15 @@ import android.content.res.Resources
 import com.example.moreira_natalia_examen3t.R
 
 /* Clase que contiene la información de los discos */
-class DiscoProvider(resources: Resources) {
+class DiscoProvider {
     companion object{
-        @Volatile
-        private var INSTANCE: DiscoProvider? = null
 
-        fun getDataSource(resources: Resources): DiscoProvider {
-            return synchronized(DiscoProvider::class) {
-                val newInstance = INSTANCE ?: DiscoProvider(resources)
-                INSTANCE = newInstance
-                newInstance
-            }
-        }
+        // creamos este array vacío que usaremos para rellenar con la lista del género seleccionado
+        var listaDisco : MutableList<DiscoModel> = mutableListOf(
+        )
 
-        val listaDisco : MutableList<DiscoModel> = mutableListOf(
+        // creamos 3 arrays con la lista de los 3 géneros
+        var listaRock : MutableList<DiscoModel> = mutableListOf(
             DiscoModel(
                 foto = R.drawable.abbeyroad,
                 titulo = "Abbey Road",
@@ -30,13 +25,6 @@ class DiscoProvider(resources: Resources) {
                 artista = "The Rolling Stones",
                 desc = R.string.exilesonmainstreet,
                 id = 1
-            ),
-            DiscoModel(
-                foto = R.drawable.velvetunderground,
-                titulo = "The Velvet Underground",
-                artista = "The Velvet Underground and Nico",
-                desc = R.string.velvetunderground,
-                id = 2
             ),
             DiscoModel(
                 foto = R.drawable.areyouexperienced,
@@ -64,7 +52,9 @@ class DiscoProvider(resources: Resources) {
                 artista = "Led Zeppelin",
                 desc = R.string.ledzeppeliniv,
                 id = 6
-            ),
+            )
+        )
+        var listaBlues : MutableList<DiscoModel> = mutableListOf(
             DiscoModel(
                 foto = R.drawable.ladysoul,
                 titulo = "Lady Soul",
@@ -85,7 +75,9 @@ class DiscoProvider(resources: Resources) {
                 artista = "Marvin Gaye",
                 desc = R.string.whatsgoingon,
                 id = 9
-            ),
+            )
+        )
+        var listaJazz : MutableList<DiscoModel> = mutableListOf(
             DiscoModel(
                 foto = R.drawable.kindofblue,
                 titulo = "Kind of Blue",
@@ -101,6 +93,13 @@ class DiscoProvider(resources: Resources) {
                 id = 11
             ),
             DiscoModel(
+                foto = R.drawable.velvetunderground,
+                titulo = "The Velvet Underground",
+                artista = "The Velvet Underground and Nico",
+                desc = R.string.velvetunderground,
+                id = 2
+            ),
+            DiscoModel(
                 foto = R.drawable.alovesupreme,
                 titulo = "A Love Supreme",
                 artista = "John Coltrane",
@@ -109,7 +108,17 @@ class DiscoProvider(resources: Resources) {
             )
         )
 
-    }
+        // guardamos los datos
+        var ResetRock = listaRock
+        var ResetBlues = listaBlues
+        var ResetJazz = listaJazz
 
-    //fun getDiscoFromId(id: Long) = listaDisco.firstOrNull { it.id == id }
+        // reseteamos las listas
+        fun reset(){
+            listaRock = ResetRock
+            listaBlues = ResetBlues
+            listaJazz = ResetJazz
+        }
+
+    }
 }
